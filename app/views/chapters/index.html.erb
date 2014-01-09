@@ -1,0 +1,24 @@
+<%- model_class = Chapter -%>
+<script type="text/javascript">
+
+</script>
+
+<div class="page-header alert alert-success">
+  <h4><%= @book.name %><%= " " %><%= @book.grade %></h4>
+</div>
+
+<div>
+  <% @chapters.each do |chapter| %>
+
+      <div class="well">
+       <h4 class="well-small" style="color: blue;">
+          <i class="icon-arrow-right"></i>
+          <%= link_to "#{chapter.name}", chapter_questions_path(chapter) %>
+        </h4>
+      </div>
+  <% end %>
+</div>
+
+<div class="form-actions">
+  <%= link_to "<< Back", books_path, :class => 'btn btn-primary'%>  <br/>
+</div>
