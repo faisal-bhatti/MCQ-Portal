@@ -1,17 +1,24 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+group :development, :test do
+  gem 'sqlite3'
+  gem  'mysql2'
+end
 gem 'activeadmin'
 gem 'carrierwave'
 gem 'fog'
 gem 'sorcery'
 gem 'libv8'
-gem 'pg'
+gem 'heroku'
+group :production do
+  gem 'pg'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

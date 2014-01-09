@@ -7,18 +7,16 @@
   <h4><%= @book.name %><%= " " %><%= @book.grade %></h4>
 </div>
 
-<div>
+<div class="well">
+  <ul>
   <% @chapters.each do |chapter| %>
-
-      <div class="well">
-       <h4 class="well-small" style="color: blue;">
-          <i class="icon-arrow-right"></i>
-          <%= link_to "#{chapter.name}", chapter_questions_path(chapter) %>
-        </h4>
-      </div>
+    <h4 class="well-small" style="color: blue;">
+      <i><%= link_to "#{chapter.name}", chapter_questions_path(chapter), :class=>"icon-arrow-right" %></i>
+    </h4>
   <% end %>
+  </ul>
 </div>
 
 <div class="form-actions">
-  <%= link_to "<< Back", books_path, :class => 'btn btn-primary'%>  <br/>
+  <%= link_to "Go Back", books_path, :class => 'btn btn-primary'%>  <br/>
 </div>
