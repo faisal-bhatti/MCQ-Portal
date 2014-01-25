@@ -10,8 +10,8 @@
 <div class="well">
   <ul>
   <% @chapters.each do |chapter| %>
-    <h4 class="well-small" style="color: blue;">
-      <i><%= link_to "#{chapter.name}", chapter_questions_path(chapter), :class=>"icon-arrow-right" %></i>
+    <h4 class="well" style="color: blue;">
+      <i><%= link_to "#{chapter.name}", chapter_questions_path(chapter), :class=>"icon-arrow-right", :style=>"width: auto;" %></i>
     </h4>
   <% end %>
   </ul>
