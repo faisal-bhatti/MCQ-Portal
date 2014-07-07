@@ -7,5 +7,5 @@ class STATUS_CONSTANT
 end
 
 class GRADE_CONSTANT
-  GRADE_TYPE = ['9th', '10th']
+  GRADE_TYPE = [9, 10]
 end

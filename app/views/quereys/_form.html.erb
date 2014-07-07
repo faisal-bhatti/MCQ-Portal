@@ -5,12 +5,12 @@
       <%= f.text_field :subject, :class => 'text_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :"Class", :class => 'control-label' %>
+<!--   <div class="control-group">
+    <%#= f.label :"Class", :class => 'control-label' %>
     <div class="controls">
-      <%= f.select(:grade,GRADE_CONSTANT::GRADE_TYPE) %>
+      <%#= f.select(:grade,GRADE_CONSTANT::GRADE_TYPE) %>
     </div>
-  </div>
+  </div> -->
   <div class="control-group">
     <%= f.label :question, :class => 'control-label' %>
     <div class="controls">
@@ -32,12 +32,12 @@
   <div class="control-group">
     <%= f.label :reason, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :reason, :class => 'text_area textarea_size', :placeholder=>"Write reason here" %>
+      <%= f.text_area :reason, :class => 'text_area textarea_size', :placeholder=>"Write reason here ..." %>
     </div>
   </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit "Submit", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 books_path, :class => 'btn' %>
   </div>

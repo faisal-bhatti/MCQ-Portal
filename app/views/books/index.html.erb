@@ -15,10 +15,16 @@
 
 
 
-<div class="page-header alert alert-success">
-  <i class='icon-double-angle-right icon-white'></i>
-  <strong>Home</strong>
-</div>
+  <!-- <i class='icon-double-angle-right icon-white'></i> -->
+  <% if current_user.present? %>
+    <div class="page-header alert alert-success">
+      <strong>Home</strong>
+    </div>
+  <% else %>
+    <div class="page-header alert alert-warning">
+      <strong>Please Login First OR New User ? </strong><%= link_to "Sign up", new_user_registration_path %>
+    </div>
+  <% end %>
 <div id="myCarousel" class="carousel slide">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

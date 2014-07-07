@@ -1,4 +1,8 @@
 MCQPortal::Application.routes.draw do
+
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -51,11 +55,13 @@ MCQPortal::Application.routes.draw do
       end
     end
   end
-     resources :books do
-       resources :chapters
-       resources :answers
-       resources :options
-     end
+  resources :books do
+    resources :chapters
+    resources :answers
+    resources :options
+  end
+
+  root :to=> 'dashboard#index'
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
@@ -79,7 +85,6 @@ MCQPortal::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'books#index'
 
   # See how all your routes lay out with "rake routes"
 

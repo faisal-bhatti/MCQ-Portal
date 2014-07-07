@@ -60,7 +60,10 @@ Devise.setup do |config|
 
   # If http headers should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
-
+  config.mailer_sender = "admin@mcqportal.com"
+  # config.authentication_keys = [ :username ]
+# config.case_insensitive_keys = [ :username ]
+# config.strip_whitespace_keys = [ :username ]
   # The realm used in Http Basic Authentication. "Application" by default.
   # config.http_authentication_realm = "Application"
 

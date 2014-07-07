@@ -32,31 +32,49 @@
       <div class="nav-collapse">
         <ul class="nav pull-right">
           <li><%= link_to "Home", books_path %></li>
-          <li id="intro_farm"><%= link_to "About Us", :data_intro=>"Hello step one", :data_step=>'1' %></li>
+          <li id="intro_farm"><%= link_to "About Us" %></li>
           <li><%= link_to "Contact Us" %></li>
-          <li class="text-right"><%= link_to "sign In" %></li>
+          <!-- <li class="text-right"><%#= link_to "sign In" %></li> -->
+          <% if user_signed_in? %>
+           
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>
   </div>
 </div>
-<% @books = Book.all %>
 
+<% flash.try(:each) do |name, msg| %>
+        <div class="alert alert-<%= name %>">
+             <a class="close" data-dismiss="alert">×</a>
+             <%= msg %>
+        </div>
+    <% end %>
 <div class="row-fluid" style="padding-left: 3%;">
   <div class="span2 well">
 
     <ul class="nav nav-list">
-      <li class="nav-header">Subjects</li>
-      <% @books.each do |book| %>
-          <li><%= link_to "#{book.name} #{book.grade}", book_chapters_path(book) %></li>
-      <% end %>
-      <li class="nav-header">
-        <hr>
-      </li>
+      <% if user_signed_in? 
+          @books = Book.where(grade: current_user.grade.to_i)
+        %>
+
+        <li class="nav-header">Subjects</li>
+        <% @books && @books.each do |book| %>
+            <li><%= link_to "#{book.name} #{book.grade}", book_chapters_path(book) %></li>
+        <% end %>
+        <li class="nav-header">
+          <hr>
+        </li>
       <li><%= link_to "Download Notes", notes_path %></li>
       <li><%= link_to "Your suggestions", new_querey_path %></li>
       <li><%= link_to "Ask Question", new_askquestion_path %></li>
       <!-- <li><%#= link_to "Email", emails_path %></li> -->
+      <% end %>
 
       <li class="nav-header">
         <hr>

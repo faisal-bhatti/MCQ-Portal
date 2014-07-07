@@ -13,9 +13,10 @@ end
 gem 'activeadmin'
 gem 'carrierwave'
 gem 'fog'
-gem 'sorcery'
+# gem 'sorcery'
 gem 'libv8'
 gem 'heroku'
+gem 'devise'
 group :production do
   gem 'pg'
 end
@@ -39,7 +40,7 @@ gem 'jquery-rails'
 gem 'mini_magick'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'fancybox-rails'
+# gem 'fancybox-rails'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
