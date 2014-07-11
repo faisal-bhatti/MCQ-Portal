@@ -1,2 +1,2 @@
 ﻿body { font-family: Helvetica, Arial }
-input:not([type]), input[type=text], input[type=password], select { background-color: #FFFFCC; border: 1px solid gray; padding: 2px; }
+input:not([type]), input[type=text], input[type=password], select {width:29%; border: 1px solid gray; padding: 2px; }

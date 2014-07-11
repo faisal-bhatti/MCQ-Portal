@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.fancybox.pack
-//= require intro
-//= require knockout-2.2.1
+//= require pwdwidget
 
