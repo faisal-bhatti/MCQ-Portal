@@ -6,13 +6,14 @@
           var id = $(this).attr('id');
           $(".hide-answer-"+id).removeClass('hidden');
           $(".see-answer-"+id).addClass('hidden');
-          $(this).next('div').removeClass('invisible');
+          $(this).next('div').removeClass('hidden');
         });
         $(".hide-answer").click(function(){
           var id = $(this).attr('id');
-          $(".hide-answer-"+id).addClass('hidden');
+          // alert(id);
           $(".see-answer-"+id).removeClass('hidden');
-          $(".see-answer").next('div').addClass("invisible")
+          $(".hide-answer-"+id).addClass('hidden');
+          $(".see-answer-"+id).next('div').addClass("hidden")
         });
     });
 
@@ -41,7 +42,7 @@
 
         <div class='btn btn-primary hidden hide-answer hide-answer-<%="#{q.object.id}"%>' id='<%="#{q.object.id}"%>'>Hide Answer</div>
         <div class='btn btn-primary see-answer see-answer-<%="#{q.object.id}"%>' id='<%="#{q.object.id}"%>'>Check Answer</div>
-        <div id="getanswer" class="invisible">
+        <div id="getanswer" class="hidden">
          <strong><%= "Answer:" %></strong><div class="label_color"><%= q.object.answer.ans %></div>
         </div>
         <% number = 1 %>
